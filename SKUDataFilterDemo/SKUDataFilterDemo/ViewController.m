@@ -89,8 +89,8 @@
                  ];
     
     
-    RGGoodsAttributedHelper *helper = [[RGGoodsAttributedHelper alloc] initWithDictionary:JSON];
-    _dataSource = helper.attributesList;
+    RGGoodsAttributedHelper *helper = [[RGGoodsAttributedHelper alloc] initWithSameGoodsList:sameGoodsList allSameGoodsList:allSameGoodsList];
+    _dataSource = helper.attributesModel.list;
     _skuData = helper.matchedModel.list;
     
     
@@ -102,9 +102,7 @@
     
     
     //默认选中
-    
-
-    _filter.needDefaultValue = NO;
+    _filter.needDefaultValue = YES;
     [self.collectionView reloadData]; //更新UI显示
     [self action_complete:nil];       //更新结果查询
 

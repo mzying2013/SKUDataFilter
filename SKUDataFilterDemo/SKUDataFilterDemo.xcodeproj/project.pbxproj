@@ -12,6 +12,7 @@
 		0CF2E1EB23150F7600B2694E /* RGGoodsAttributesItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2E1E823150F7600B2694E /* RGGoodsAttributesItem.m */; };
 		0CF2E1EC23150F7600B2694E /* RGGoodsAttributesGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2E1E923150F7600B2694E /* RGGoodsAttributesGroup.m */; };
 		0CF2E1EF2315108B00B2694E /* RGGoodsAttributesMatchedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2E1EE2315108B00B2694E /* RGGoodsAttributesMatchedModel.m */; };
+		0CF2E1F22316651100B2694E /* RGGoodsAttributesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2E1F12316651100B2694E /* RGGoodsAttributesModel.m */; };
 		4D322A8B1FD817C900EE24D9 /* UICollectionViewFlowLayout+ORIBProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D322A7A1FD817C900EE24D9 /* UICollectionViewFlowLayout+ORIBProperty.m */; };
 		4D322A8C1FD817C900EE24D9 /* UILabel+ORIBProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D322A801FD817C900EE24D9 /* UILabel+ORIBProperty.m */; };
 		4D322A8D1FD817C900EE24D9 /* UITextField+ORIBProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D322A831FD817C900EE24D9 /* UITextField+ORIBProperty.m */; };
@@ -61,6 +62,8 @@
 		0CF2E1E923150F7600B2694E /* RGGoodsAttributesGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGGoodsAttributesGroup.m; sourceTree = "<group>"; };
 		0CF2E1ED2315108B00B2694E /* RGGoodsAttributesMatchedModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RGGoodsAttributesMatchedModel.h; sourceTree = "<group>"; };
 		0CF2E1EE2315108B00B2694E /* RGGoodsAttributesMatchedModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RGGoodsAttributesMatchedModel.m; sourceTree = "<group>"; };
+		0CF2E1F02316651100B2694E /* RGGoodsAttributesModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RGGoodsAttributesModel.h; sourceTree = "<group>"; };
+		0CF2E1F12316651100B2694E /* RGGoodsAttributesModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RGGoodsAttributesModel.m; sourceTree = "<group>"; };
 		19BE9E4F08089967B1C0EBC8 /* Pods_SKUDataFilterDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SKUDataFilterDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D322A791FD817C900EE24D9 /* UITextField+ORIBProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+ORIBProperty.h"; sourceTree = "<group>"; };
 		4D322A7A1FD817C900EE24D9 /* UICollectionViewFlowLayout+ORIBProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewFlowLayout+ORIBProperty.m"; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 				0CF2E1E723150F7600B2694E /* RGGoodsAttributedHelper.m */,
 				0CF2E1ED2315108B00B2694E /* RGGoodsAttributesMatchedModel.h */,
 				0CF2E1EE2315108B00B2694E /* RGGoodsAttributesMatchedModel.m */,
+				0CF2E1F02316651100B2694E /* RGGoodsAttributesModel.h */,
+				0CF2E1F12316651100B2694E /* RGGoodsAttributesModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -507,6 +512,7 @@
 				4D38B48F20F116D1006ACEC6 /* ORSKUDataFilter.m in Sources */,
 				4DD9432E1FD8113E00BA2396 /* main.m in Sources */,
 				4D322A921FD817C900EE24D9 /* UITextView+ORIBProperty.m in Sources */,
+				0CF2E1F22316651100B2694E /* RGGoodsAttributesModel.m in Sources */,
 				0CF2E1EB23150F7600B2694E /* RGGoodsAttributesItem.m in Sources */,
 				4D322A8E1FD817C900EE24D9 /* UIView+ORIBProperty.m in Sources */,
 				4D322A911FD817C900EE24D9 /* Aspects.m in Sources */,

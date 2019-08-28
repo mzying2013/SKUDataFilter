@@ -9,16 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "RGGoodsAttributesGroup.h"
 #import "RGGoodsAttributesMatchedModel.h"
+#import "RGGoodsAttributesModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RGGoodsAttributedHelper : NSObject
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+- (instancetype)initWithSameGoodsList:(NSArray *)sameGoodList allSameGoodsList:(NSArray *)allSameGoodsList;
 
-- (NSArray<NSDictionary *> * _Nullable)matchingWithKey:(NSString *)key;
-
-@property (nonatomic, strong, readonly) NSArray <RGGoodsAttributesGroup *> *attributesList;
+@property (nonatomic, strong, readonly) RGGoodsAttributesModel *attributesModel;
 @property (nonatomic, strong, readonly) RGGoodsAttributesMatchedModel *matchedModel;
 
 @end

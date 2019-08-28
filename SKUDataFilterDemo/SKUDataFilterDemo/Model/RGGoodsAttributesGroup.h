@@ -13,7 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RGGoodsAttributesGroup : NSObject
 
-//TODO:改属性名称需要确认是否支持多语言
 /**
  属性名称
  */
