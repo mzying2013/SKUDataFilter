@@ -30,4 +30,19 @@
 }
 
 
+- (NSArray<NSIndexPath *> *)defaultIndexPaths{
+    
+    NSMutableArray *tempMArray = [NSMutableArray array];
+    
+    [self.list enumerateObjectsUsingBlock:^(RGGoodsAttributesGroup * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSUInteger section = idx;
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:obj.defaultIndex inSection:section];
+        [tempMArray addObject:indexPath];
+    }];
+    
+    return [tempMArray copy];
+}
+
+
+
 @end

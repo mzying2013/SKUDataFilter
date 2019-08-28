@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readonly) NSArray<NSString *> *attrValues;
 
+@property (nonatomic, assign, readonly) NSUInteger defaultIndex;
+
 @end
 
 NS_ASSUME_NONNULL_END

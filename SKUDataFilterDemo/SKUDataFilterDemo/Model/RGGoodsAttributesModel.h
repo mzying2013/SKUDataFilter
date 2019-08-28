@@ -6,7 +6,7 @@
 //  Copyright © 2019 OrangesAL. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "RGGoodsAttributesGroup.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithSameGoodList:(NSArray *)sameGoodList;
 
 @property (nonatomic, strong, readonly) NSArray <RGGoodsAttributesGroup *> *list;
+@property (nonatomic, strong, readonly) NSArray<NSIndexPath *> *defaultIndexPaths;
 
 @end
 

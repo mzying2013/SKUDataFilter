@@ -102,11 +102,13 @@
     
     
     //默认选中
-    _filter.needDefaultValue = YES;
+    _filter.needDefaultValue = NO;
     [self.collectionView reloadData]; //更新UI显示
     [self action_complete:nil];       //更新结果查询
 
-    
+    [helper.attributesModel.defaultIndexPaths enumerateObjectsUsingBlock:^(NSIndexPath * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [_filter didSelectedPropertyWithIndexPath:obj];
+    }];
 }
 
 #pragma mark -- collectionView

@@ -48,4 +48,19 @@
 }
 
 
+- (NSUInteger)defaultIndex{
+    
+    __block NSUInteger item = 0;
+    
+    [self.list enumerateObjectsUsingBlock:^(RGGoodsAttributesItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.selected) {
+            item = idx;
+            *stop = YES;
+        }
+    }];
+    
+    return item;
+}
+
+
 @end
