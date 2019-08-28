@@ -1,0 +1,201 @@
+{
+    "same_goods_list": [
+        {
+            "nameEn": "Gender",
+            "name": "Gender",
+            "list": {
+                "F": {
+                    "is_bf": "0",
+                    "goods_id": "1793510",
+                    "attr_id": "8",
+                    "attr_value": "F",
+                    "en_show": "1",
+                    "goods_sn": "248759115",
+                    "goods_thumb": "https://gloimg.rglcdn.com/rosegal/pdm-product-pic/Clothing/2017/12/19/thumb-img/1514162520917656130.jpg",
+                    "disabled_country_code": "",
+                    "goods_number": "65533",
+                    "attr_name": "Color",
+                    "attr_type": "1",
+                    "available_stock": "49",
+                    "shelf_down_type": "0",
+                    "sale_country": "",
+                    "color_size_disable": 0,
+                    "spe_format_price": "0.00"
+                },
+                "M": {
+                    "is_bf": "0",
+                    "goods_id": "1793609",
+                    "attr_id": "8",
+                    "attr_value": "M",
+                    "en_show": "1",
+                    "goods_sn": "248759101",
+                    "goods_thumb": "https://gloimg.rglcdn.com/rosegal/pdm-product-pic/Clothing/2017/12/19/thumb-img/1514162540996042392.jpg",
+                    "disabled_country_code": "",
+                    "goods_number": "65535",
+                    "attr_name": "Color",
+                    "attr_type": "1",
+                    "available_stock": "42",
+                    "shelf_down_type": "0",
+                    "sale_country": "",
+                    "color_size_disable": 1,
+                    "spe_format_price": "0.00"
+                }
+            },
+            "attr": [],
+            "type": 8
+        },
+        {
+            "nameEn": "Color",
+            "name": "Color",
+            "list": {
+                "R": {
+                    "is_bf": "0",
+                    "goods_id": "1793627",
+                    "attr_id": "7",
+                    "attr_value": "R",
+                    "en_show": "1",
+                    "goods_sn": "248759110",
+                    "goods_thumb": "https://gloimg.rglcdn.com/rosegal/pdm-product-pic/Clothing/2017/12/19/thumb-img/1514162530969326055.jpg",
+                    "disabled_country_code": "",
+                    "goods_number": "500",
+                    "attr_name": "Size",
+                    "attr_type": "1",
+                    "available_stock": "0",
+                    "shelf_down_type": "0",
+                    "sale_country": "",
+                    "color_size_disable": 0,
+                    "data_tips": "Fit US Size:2,Length:35.4.(In inches)",
+                    "spe_format_price": "0.00"
+                },
+                "G": {
+                    "is_bf": "0",
+                    "goods_id": "1793625",
+                    "attr_id": "7",
+                    "attr_value": "G",
+                    "en_show": "1",
+                    "goods_sn": "248759109",
+                    "goods_thumb": "https://gloimg.rglcdn.com/rosegal/pdm-product-pic/Clothing/2017/12/19/thumb-img/1514162530784702685.jpg",
+                    "disabled_country_code": "",
+                    "goods_number": "525",
+                    "attr_name": "Size",
+                    "attr_type": "1",
+                    "available_stock": "28",
+                    "shelf_down_type": "0",
+                    "sale_country": "",
+                    "color_size_disable": 0,
+                    "data_tips": "Fit US Size:4,Length:35.8.(In inches)",
+                    "spe_format_price": "0.00"
+                },
+                "B": {
+                    "is_bf": "0",
+                    "goods_id": "1793623",
+                    "attr_id": "7",
+                    "attr_value": "B",
+                    "en_show": "1",
+                    "goods_sn": "248759108",
+                    "goods_thumb": "https://gloimg.rglcdn.com/rosegal/pdm-product-pic/Clothing/2017/12/19/thumb-img/1514162529065572661.jpg",
+                    "disabled_country_code": "",
+                    "goods_number": "505",
+                    "attr_name": "Size",
+                    "attr_type": "1",
+                    "available_stock": "5",
+                    "shelf_down_type": "0",
+                    "sale_country": "",
+                    "color_size_disable": 0,
+                    "data_tips": "Fit US Size:6,Length:36.2.(In inches)",
+                    "spe_format_price": "0.00"
+                }
+            },
+            "attr": [],
+            "type": 7
+        },
+        {
+            "nameEn": "Size",
+            "name": "Size",
+            "list": {
+                "L": {
+                    "is_bf": "0",
+                    "goods_id": "1793627",
+                    "attr_id": "7",
+                    "attr_value": "L",
+                    "en_show": "1",
+                    "goods_sn": "248759110",
+                    "goods_thumb": "https://gloimg.rglcdn.com/rosegal/pdm-product-pic/Clothing/2017/12/19/thumb-img/1514162530969326055.jpg",
+                    "disabled_country_code": "",
+                    "goods_number": "500",
+                    "attr_name": "Size",
+                    "attr_type": "1",
+                    "available_stock": "0",
+                    "shelf_down_type": "0",
+                    "sale_country": "",
+                    "color_size_disable": 0,
+                    "data_tips": "Fit US Size:2,Length:35.4.(In inches)",
+                    "spe_format_price": "0.00"
+                },
+                "X": {
+                    "is_bf": "0",
+                    "goods_id": "1793625",
+                    "attr_id": "7",
+                    "attr_value": "X",
+                    "en_show": "1",
+                    "goods_sn": "248759109",
+                    "goods_thumb": "https://gloimg.rglcdn.com/rosegal/pdm-product-pic/Clothing/2017/12/19/thumb-img/1514162530784702685.jpg",
+                    "disabled_country_code": "",
+                    "goods_number": "525",
+                    "attr_name": "Size",
+                    "attr_type": "1",
+                    "available_stock": "28",
+                    "shelf_down_type": "0",
+                    "sale_country": "",
+                    "color_size_disable": 0,
+                    "data_tips": "Fit US Size:4,Length:35.8.(In inches)",
+                    "spe_format_price": "0.00"
+                },
+                "S": {
+                    "is_bf": "0",
+                    "goods_id": "1793623",
+                    "attr_id": "7",
+                    "attr_value": "S",
+                    "en_show": "1",
+                    "goods_sn": "248759108",
+                    "goods_thumb": "https://gloimg.rglcdn.com/rosegal/pdm-product-pic/Clothing/2017/12/19/thumb-img/1514162529065572661.jpg",
+                    "disabled_country_code": "",
+                    "goods_number": "505",
+                    "attr_name": "Size",
+                    "attr_type": "1",
+                    "available_stock": "5",
+                    "shelf_down_type": "0",
+                    "sale_country": "",
+                    "color_size_disable": 0,
+                    "data_tips": "Fit US Size:6,Length:36.2.(In inches)",
+                    "spe_format_price": "0.00"
+                }
+            },
+            "attr": [],
+            "type": 7
+        }
+    ],
+    "all_same_goods_list": [
+        {
+            "goods_id": "1793506",
+            "Size": "X",
+            "goods_thumb": "https://gloimg.rglcdn.com/rosegal/pdm-product-pic/Clothing/2017/12/19/thumb-img/1514162516735799643.jpg",
+            "Color": "G",
+            "Gender": "M"
+        },
+        {
+            "goods_id": "1793506",
+            "Size": "S",
+            "goods_thumb": "https://gloimg.rglcdn.com/rosegal/pdm-product-pic/Clothing/2017/12/19/thumb-img/1514162516735799643.jpg",
+            "Color": "G",
+            "Gender": "F"
+        },
+        {
+            "goods_id": "1793506",
+            "Size": "X",
+            "goods_thumb": "https://gloimg.rglcdn.com/rosegal/pdm-product-pic/Clothing/2017/12/19/thumb-img/1514162516735799643.jpg",
+            "Color": "R",
+            "Gender": "F"
+        }
+    ]
+}

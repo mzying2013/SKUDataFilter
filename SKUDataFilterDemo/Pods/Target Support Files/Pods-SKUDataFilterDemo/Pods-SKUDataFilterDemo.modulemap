@@ -1,0 +1,6 @@
+framework module Pods_SKUDataFilterDemo {
+  umbrella header "Pods-SKUDataFilterDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}

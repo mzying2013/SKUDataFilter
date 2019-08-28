@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "ORSKUDataFilter.h"
+#import "RGGoodsAttributedHelper.h"
 
 @interface ViewController ()<UICollectionViewDataSource, UICollectionViewDelegate,ORSKUDataFilterDataSource>
 
@@ -28,6 +29,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    //Test 测试 API
+    NSMutableSet *set1 = [NSMutableSet setWithObjects:@"a",@"b",nil];
+    NSSet *set2 = [NSSet setWithObjects:@"1",@"2",@"b",nil];
+    [set1 intersectsSet:set2];
+    [set1 intersectSet:set2];
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"goods" ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    NSArray *sameGoodsList = JSON[@"same_goods_list"];
+    NSArray *allSameGoodsList = JSON[@"all_same_goods_list"];
     
     
     NSArray *dataSource = @[@{@"name" : @"款式",
@@ -75,6 +88,12 @@
                    @"store":@"123"}
                  ];
     
+    
+    RGGoodsAttributedHelper *helper = [[RGGoodsAttributedHelper alloc] initWithDictionary:JSON];
+    _dataSource = helper.attributesList;
+    _skuData = helper.matchedModel.list;
+    
+    
     _filter = [[ORSKUDataFilter alloc] initWithDataSource:self];
     
     //当数据更新的时候 需要reloadData
@@ -85,7 +104,7 @@
     //默认选中
     
 
-    _filter.needDefaultValue = YES;
+    _filter.needDefaultValue = NO;
     [self.collectionView reloadData]; //更新UI显示
     [self action_complete:nil];       //更新结果查询
 
@@ -99,14 +118,21 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [_dataSource[section][@"value"] count];
+    RGGoodsAttributesGroup *group = (RGGoodsAttributesGroup *)_dataSource[section];
+    return group.list.count;
+    
+//    return [_dataSource[section][@"value"] count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
         
     PropertyCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PropertyCell" forIndexPath:indexPath];
-    NSArray *data = _dataSource[indexPath.section][@"value"];
-    cell.propertyL.text = data[indexPath.row];
+    
+    RGGoodsAttributesGroup *group = (RGGoodsAttributesGroup *)_dataSource[indexPath.section];
+//    NSArray *data = _dataSource[indexPath.section][@"value"];
+    NSArray<RGGoodsAttributesItem *> * data = group.list;
+//    cell.propertyL.text = data[indexPath.row];
+    cell.propertyL.text = data[indexPath.row].attr_value;
     
     if ([_filter.availableIndexPathsSet containsObject:indexPath]) {
         [cell setTintStyleColor:[UIColor blackColor]];
@@ -124,7 +150,12 @@
     
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         PropertyHeader *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"headerIdf" forIndexPath:indexPath];
-        view.headernameL.text = _dataSource[indexPath.section][@"name"];
+        
+        RGGoodsAttributesGroup *group = (RGGoodsAttributesGroup *)_dataSource[indexPath.section];
+        NSString *name = group.name;
+        
+//        view.headernameL.text = _dataSource[indexPath.section][@"name"];
+        view.headernameL.text = name;
         return view;
 
     }else {
@@ -150,7 +181,9 @@
 }
 
 - (NSArray *)filter:(ORSKUDataFilter *)filter propertiesInSection:(NSInteger)section {
-    return _dataSource[section][@"value"];
+//    return _dataSource[section][@"value"];
+    RGGoodsAttributesGroup *group = (RGGoodsAttributesGroup *)_dataSource[section];
+    return group.attrValues;
 }
 
 - (NSInteger)numberOfConditionsInFilter:(ORSKUDataFilter *)filter {
@@ -158,14 +191,22 @@
 }
 
 - (NSArray *)filter:(ORSKUDataFilter *)filter conditionForRow:(NSInteger)row {
-    NSString *condition = _skuData[row][@"contition"];
-    return [condition componentsSeparatedByString:@","];
+//    NSString *condition = _skuData[row][@"contition"];
+//    return [condition componentsSeparatedByString:@","];
+    
+    NSArray<RGGoodsAttributesMatchedItemModel *> *list = _skuData;
+    RGGoodsAttributesMatchedItemModel *model = list[row];
+    return model.contitions;
 }
 
 - (id)filter:(ORSKUDataFilter *)filter resultOfConditionForRow:(NSInteger)row {
-    NSDictionary *dic = _skuData[row];
-    return @{@"price": dic[@"price"],
-             @"store": dic[@"store"]};
+    
+    NSArray<RGGoodsAttributesMatchedItemModel *> *list = _skuData;
+    return list[row];
+    
+//    NSDictionary *dic = _skuData[row];
+//    return @{@"price": dic[@"price"],
+//             @"store": dic[@"store"]};
 }
 
 #pragma mark -- action
@@ -173,17 +214,24 @@
     
 //    NSLog(@"%@", _filter.currentAvailableResutls);
 
-    NSDictionary *dic = _filter.currentResult;
+//    NSDictionary *dic = _filter.currentResult;
+//
+//    if (dic == nil) {
+//        NSLog(@"请选择完整 属性");
+//        _priceL.text = @"￥0";
+//        _storeL.text = @"库存0件";
+//        return;
+//    }
     
-    if (dic == nil) {
+    id result = _filter.currentResult;
+    
+    if (result == nil) {
         NSLog(@"请选择完整 属性");
-        _priceL.text = @"￥0";
-        _storeL.text = @"库存0件";
         return;
     }
     
-    _priceL.text = [NSString stringWithFormat:@"￥%@",dic[@"price"]];
-    _storeL.text = [NSString stringWithFormat:@"库存%@件",dic[@"store"]];
+    _priceL.text = ((RGGoodsAttributesMatchedItemModel *)result).goods_id;
+//    _storeL.text = [NSString stringWithFormat:@"库存%@件",dic[@"store"]];
     
 }
 
