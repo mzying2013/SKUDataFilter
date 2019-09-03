@@ -109,6 +109,10 @@
 - (void)reloadData;
 
 
+//根据坐标获取条件式中的关联值
+- (id)resultOfIndexPath:(NSIndexPath *)indexPath;
+
+
 @end
 
 

@@ -386,6 +386,39 @@
     
 }
 
+
+- (id)resultOfIndexPath:(NSIndexPath *)indexPath{
+    
+    if (_selectedIndexPaths.count != [_dataSource numberOfSectionsForPropertiesInFilter:self]) {
+        return nil;
+    }
+    
+    NSMutableSet *currentIndexPathSet = [NSMutableSet setWithSet:self.selectedIndexPaths];
+    
+    [self.selectedIndexPaths enumerateObjectsUsingBlock:^(NSIndexPath * _Nonnull obj, BOOL * _Nonnull stop) {
+        if (obj.section == indexPath.section) {
+            [currentIndexPathSet removeObject:obj];
+            [currentIndexPathSet addObject:indexPath];
+            
+            *stop = YES;
+        }
+    }];
+    
+    __block id result = nil;
+    
+    [_conditions enumerateObjectsUsingBlock:^(ORSKUCondition * _Nonnull obj, BOOL * _Nonnull stop) {
+        
+        if ([obj.conditionIndexPaths isEqualToSet:[currentIndexPathSet copy]]) {
+            result = obj.result;
+            *stop = YES;
+        }
+    }];
+    
+    return result;
+}
+
+
+
 // 当前结果
 - (void)updateCurrentResult {
     
