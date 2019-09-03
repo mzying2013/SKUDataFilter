@@ -141,12 +141,12 @@
 		0CF2E1E323150F7600B2694E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0CF2E1E523150F7600B2694E /* RGGoodsAttributedHelper.h */,
+				0CF2E1E723150F7600B2694E /* RGGoodsAttributedHelper.m */,
 				0CF2E1E423150F7600B2694E /* RGGoodsAttributesItem.h */,
 				0CF2E1E823150F7600B2694E /* RGGoodsAttributesItem.m */,
 				0CF2E1E623150F7600B2694E /* RGGoodsAttributesGroup.h */,
 				0CF2E1E923150F7600B2694E /* RGGoodsAttributesGroup.m */,
-				0CF2E1E523150F7600B2694E /* RGGoodsAttributedHelper.h */,
-				0CF2E1E723150F7600B2694E /* RGGoodsAttributedHelper.m */,
 				0CF2E1ED2315108B00B2694E /* RGGoodsAttributesMatchedModel.h */,
 				0CF2E1EE2315108B00B2694E /* RGGoodsAttributesMatchedModel.m */,
 				0CF2E1F02316651100B2694E /* RGGoodsAttributesModel.h */,

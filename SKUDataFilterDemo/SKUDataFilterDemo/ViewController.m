@@ -30,63 +30,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    //Test 测试 API
-    NSMutableSet *set1 = [NSMutableSet setWithObjects:@"a",@"b",nil];
-    NSSet *set2 = [NSSet setWithObjects:@"1",@"2",@"b",nil];
-    [set1 intersectsSet:set2];
-    [set1 intersectSet:set2];
-    
     NSString *path = [[NSBundle mainBundle] pathForResource:@"goods" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:path];
     NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
     NSArray *sameGoodsList = JSON[@"same_goods_list"];
     NSArray *allSameGoodsList = JSON[@"all_same_goods_list"];
-    
-    
-    NSArray *dataSource = @[@{@"name" : @"款式",
-                              @"value" : @[@"male", @"famale"]},
-                            @{@"name" : @"颜色",
-                              @"value" : @[@"red", @"green", @"blue"]},
-                            @{@"name" : @"尺寸",
-                              @"value" : @[@"XXL", @"XL", @"L", @"S", @"M"]},
-                            @{@"name" : @"test",
-                              @"value" : @[@"A", @"B", @"C"]},];
-    _dataSource = dataSource;
-    
-    _selectedIndexPaths = [NSMutableArray array];
-    
-    _skuData = @[
-                 @{@"contition":@"male,red,XL,A",
-                   @"price":@"1120",
-                   @"store":@"167"},
-                 @{@"contition":@"male,red,M,B",
-                   @"price":@"1200",
-                   @"store":@"289"},
-                 @{@"contition":@"male,green,L,A",
-                   @"price":@"889",
-                   @"store":@"300"},
-                 @{@"contition":@"male,green,M,B",
-                   @"price":@"991",
-                   @"store":@"178"},
-                 @{@"contition":@"famale,red,XL,A",
-                   @"price":@"1000",
-                   @"store":@"200"},
-                 @{@"contition":@"famale,blue,L,B",
-                   @"price":@"880",
-                   @"store":@"12"},
-                 @{@"contition":@"famale,blue,XXL,C",
-                   @"price":@"1210",
-                   @"store":@"300"},
-                 @{@"contition":@"male,blue,L,C",
-                   @"price":@"888",
-                   @"store":@"121"},
-                 @{@"contition":@"famale,green,M,C",
-                   @"price":@"1288",
-                   @"store":@"125"},
-                 @{@"contition":@"male,blue,L,A",
-                   @"price":@"1210",
-                   @"store":@"123"}
-                 ];
     
     
     RGGoodsAttributedHelper *helper = [[RGGoodsAttributedHelper alloc] initWithSameGoodsList:sameGoodsList allSameGoodsList:allSameGoodsList];
@@ -104,11 +52,12 @@
     //默认选中
     _filter.needDefaultValue = NO;
     [self.collectionView reloadData]; //更新UI显示
-    [self action_complete:nil];       //更新结果查询
 
     [helper.attributesModel.defaultIndexPaths enumerateObjectsUsingBlock:^(NSIndexPath * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [_filter didSelectedPropertyWithIndexPath:obj];
+//        [_filter didSelectedPropertyWithIndexPath:obj];
     }];
+    
+    [self action_complete:nil];       //更新结果查询
 }
 
 #pragma mark -- collectionView
@@ -212,7 +161,7 @@
 #pragma mark -- action
 - (IBAction)action_complete:(id)sender {
     
-//    NSLog(@"%@", _filter.currentAvailableResutls);
+    NSLog(@"^^^^^ %@", _filter.currentAvailableResutls);
 
 //    NSDictionary *dic = _filter.currentResult;
 //
